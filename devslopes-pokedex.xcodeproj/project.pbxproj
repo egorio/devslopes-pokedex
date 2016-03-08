@@ -16,6 +16,7 @@
 		E8C5201A1C8F6D74006FFC8C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C520191C8F6D74006FFC8C /* Pokemon.swift */; };
 		E8C5201D1C8F7963006FFC8C /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5201C1C8F7963006FFC8C /* PokemonCell.swift */; };
 		E8C520351C8F836E006FFC8C /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C520341C8F836E006FFC8C /* csv.swift */; };
+		E8C5203A1C8F8A48006FFC8C /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8C520391C8F8A48006FFC8C /* pokemon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E8C520191C8F6D74006FFC8C /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		E8C5201C1C8F7963006FFC8C /* PokemonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		E8C520341C8F836E006FFC8C /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		E8C520391C8F8A48006FFC8C /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		E8C520311C8F8330006FFC8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E8C520391C8F8A48006FFC8C /* pokemon.ttf */,
 				E8C520021C8F59D5006FFC8C /* pokemon.csv */,
 			);
 			name = Resources;
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8C51FF91C8F566A006FFC8C /* LaunchScreen.storyboard in Resources */,
+				E8C5203A1C8F8A48006FFC8C /* pokemon.ttf in Resources */,
 				E8C51FF41C8F566A006FFC8C /* Main.storyboard in Resources */,
 				E8C520031C8F59D5006FFC8C /* pokemon.csv in Resources */,
 				E8C51FF61C8F566A006FFC8C /* Assets.xcassets in Resources */,
