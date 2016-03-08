@@ -105,6 +105,9 @@
                             <constraint firstItem="O8i-kT-M6Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uUq-lP-EjG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="mVU-hz-5PQ" id="2tU-tb-U7c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
