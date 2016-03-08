@@ -13,6 +13,9 @@
 		E8C51FF61C8F566A006FFC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C51FF51C8F566A006FFC8C /* Assets.xcassets */; };
 		E8C51FF91C8F566A006FFC8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C51FF71C8F566A006FFC8C /* LaunchScreen.storyboard */; };
 		E8C520031C8F59D5006FFC8C /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = E8C520021C8F59D5006FFC8C /* pokemon.csv */; };
+		E8C520071C8F6836006FFC8C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E8C520051C8F6836006FFC8C /* LICENSE */; };
+		E8C520081C8F6836006FFC8C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E8C520061C8F6836006FFC8C /* README.md */; };
+		E8C5200F1C8F689D006FFC8C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E8C5200E1C8F689D006FFC8C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E8C51FF81C8F566A006FFC8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8C51FFA1C8F566A006FFC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C520021C8F59D5006FFC8C /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
+		E8C520051C8F6836006FFC8C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "devslopes-pokedex/LICENSE"; sourceTree = "<group>"; };
+		E8C520061C8F6836006FFC8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "devslopes-pokedex/README.md"; sourceTree = "<group>"; };
+		E8C5200E1C8F689D006FFC8C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "devslopes-pokedex/.gitignore"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,9 @@
 			children = (
 				E8C51FED1C8F566A006FFC8C /* devslopes-pokedex */,
 				E8C51FEC1C8F566A006FFC8C /* Products */,
+				E8C520051C8F6836006FFC8C /* LICENSE */,
+				E8C520061C8F6836006FFC8C /* README.md */,
+				E8C5200E1C8F689D006FFC8C /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +139,8 @@
 				E8C51FF61C8F566A006FFC8C /* Assets.xcassets in Resources */,
 				E8C520031C8F59D5006FFC8C /* pokemon.csv in Resources */,
 				E8C51FF41C8F566A006FFC8C /* Main.storyboard in Resources */,
+				E8C5200F1C8F689D006FFC8C /* .gitignore in Resources */,
+				E8C520071C8F6836006FFC8C /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C520081C8F6836006FFC8C /* README.md in Sources */,
 				E8C51FF11C8F566A006FFC8C /* ViewController.swift in Sources */,
 				E8C51FEF1C8F566A006FFC8C /* AppDelegate.swift in Sources */,
 			);
