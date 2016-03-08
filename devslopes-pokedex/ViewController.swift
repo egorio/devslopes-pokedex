@@ -9,26 +9,37 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
-    @IBOutlet weak var collection: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
-    var pokemons = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
+    var pokemons = [Pokemon]()
+    var filteredPokemons = [Pokemon]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collection.delegate = self
-        collection.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        searchBar.delegate = self
+        searchBar.returnKeyType = .Done
 
         parsePokemonCSV()
         initAudio()
+
+        filteredPokemons = pokemons
     }
-    
+
     func initAudio() {
         let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
-        
+
         do {
             musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
             musicPlayer.prepareToPlay()
@@ -59,14 +70,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemons.count
+        return filteredPokemons.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokemonCell", forIndexPath: indexPath) as? PokemonCell
             ?? PokemonCell()
 
-        let pokemon = pokemons[indexPath.row]
+        let pokemon = filteredPokemons[indexPath.row]
 
         cell.configure(pokemon)
 
@@ -80,7 +91,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let size = (collectionView.bounds.width - 2 * 10) / 3
         return CGSize(width: size, height: size)
     }
-    
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            filteredPokemons = pokemons
+            view.endEditing(true)
+        } else {
+            filteredPokemons = pokemons.filter({ $0.name.rangeOfString(searchText.lowercaseString) != nil })
+        }
+    }
+
     @IBAction func musicToggle(sender: UIButton!) {
         if musicPlayer.playing {
             musicPlayer.stop()

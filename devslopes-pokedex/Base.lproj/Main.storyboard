@@ -77,13 +77,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="O8i-kT-M6Z">
-                                <rect key="frame" x="0.0" y="60" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="wah-O7-Geu"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGl-V1-2VZ" userLabel="Header">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <subviews>
@@ -118,6 +111,13 @@
                                     <constraint firstAttribute="bottom" secondItem="JfU-ae-eGo" secondAttribute="bottom" constant="8" id="vhz-pk-rt5"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="O8i-kT-M6Z">
+                                <rect key="frame" x="0.0" y="60" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wah-O7-Geu"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -138,7 +138,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collection" destination="mVU-hz-5PQ" id="2tU-tb-U7c"/>
+                        <outlet property="collectionView" destination="mVU-hz-5PQ" id="OFd-l8-fON"/>
+                        <outlet property="searchBar" destination="O8i-kT-M6Z" id="b9k-mJ-fum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
