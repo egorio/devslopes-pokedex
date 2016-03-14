@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -37,6 +37,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         filteredPokemons = pokemons
     }
 
+    /*
+     * Init background audio to be able switch it on of off
+     */
     func initAudio() {
         let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
 
@@ -49,6 +52,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
 
+    /*
+     * Parse local CSV file with pokemons list
+     */
     func parsePokemonCSV() {
         let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
 
@@ -85,6 +91,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowPokemonDetails", sender: filteredPokemons[indexPath.row])
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -92,10 +99,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return CGSize(width: size, height: size)
     }
 
+    /*
+     * Hide keyboard by clicking "Done" on keyboard
+     */
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         view.endEditing(true)
     }
 
+    /*
+     * Filter pokemons by changing search string
+     */
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             filteredPokemons = pokemons
@@ -105,6 +118,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowPokemonDetails",
+            let controller = segue.destinationViewController as? DetailViewController,
+            let pokemon = sender as? Pokemon {
+
+                controller.pokemon = pokemon
+        }
+    }
+
+    /*
+     * Enable or disable background music
+     */
     @IBAction func musicToggle(sender: UIButton!) {
         if musicPlayer.playing {
             musicPlayer.stop()
